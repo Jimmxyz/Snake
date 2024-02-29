@@ -1,0 +1,76 @@
+body{
+    margin:0px;
+    background-color: rgb(145, 190, 249);
+}
+#container {
+    margin-top: 40px;
+    margin-left: 40px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(108, 188, 108);
+}
+#head{
+    background-color: rgb(115, 115, 185) !important;
+}
+.snakeBody{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10%;
+    background-color: rgb(157, 157, 225);
+}
+.apple{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10%;
+    background-color: rgb(241, 109, 109);
+}
+#Scored{
+    margin: 0px;
+    background-color: rgb(141, 177, 81);
+    width: 500px;
+    height: 50px;
+}
+.backgroundsSquare{
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(102, 173, 102);
+}
+#Credit{
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 75px;
+    color: gray;
+    font-family: Helvetica ;
+    font-size: small;
+}
+a:link{
+    color: #528078;
+}
+a:visited{
+    color: #528078;
+}
+.timeSpeedrunShow{
+    position: absolute;
+    text-align: left;
+    margin-top: 500px;
+    margin-left: 40px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size:normal;
+    color: rgb(89, 120, 163)
+}
+.AppleCountShow{
+    position: absolute;
+    text-align: left;
+    margin-top: 520px;
+    margin-left: 40px;
+    font-family: "IBM Plex Sans", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size:normal;
+    color: rgb(89, 120, 163)
+}
