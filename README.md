@@ -2,7 +2,7 @@
   <h1>Snake</h1>
   <a href="LICENSE"><img alt="Static Badge" src="https://img.shields.io/badge/License_:-GNU%20General%20Public%20License%20v3.0-orange"></a>
   <a href="https://jimmxyz.github.io/Snake/"><img alt="Static Badge" src="https://img.shields.io/badge/Play_it_with_:-Github_Pages-green"></a>
-  <a href="https://jimmxyz.github.io/Snake/"><img alt="Static Badge" src="https://img.shields.io/badge/Download_on_:-Last%20release-blue"></a>
+  <a href="https://github.com/Jimmxyz/Snake/releases/tag/Release"><img alt="Static Badge" src="https://img.shields.io/badge/Download_on_:-Last%20release-blue"></a>
 </p>
 
 This is a simple version in Javascript of the original Snake game
