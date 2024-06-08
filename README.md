@@ -7,6 +7,8 @@
 
 This is a simple version in Javascript of the original Snake game
 
+This version was free and open-source
+
 # Compatibility
 This version of Snake are sopposed to be lauched in any browser on  desktop.
 >[!WARNING]
