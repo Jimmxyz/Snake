@@ -82,7 +82,7 @@ function moveTouch(e) {
 };
 
 document.addEventListener("touchstart", startTouch, false);
-document.addEventListener("touchmove", moveTouch, false);
+document.addEventListener("touchmove", moveTouch,{passive: false});
 
 NewBody();
 GenNewApple();
