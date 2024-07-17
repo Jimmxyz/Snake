@@ -20,6 +20,68 @@ let algoBest = [101,102,103,104];
 let timeBefore = 0;
 let tryBefore = 1;
 
+//Touch function
+let initialX = null;
+let initialY = null;
+
+function startTouch(e) {
+    initialX = e.touches[0].clientX;
+    initialY = e.touches[0].clientY;
+};
+
+function moveTouch(e) {
+    if (initialX === null || initialY === null ) {
+        return;
+    }
+
+    let currentX = e.touches[0].clientX;
+    let currentY = e.touches[0].clientY;
+
+    let diffX = initialX - currentX;
+    let diffY = initialY - currentY;
+
+    if (Math.abs(diffX) > Math.abs(diffY)) {
+        // sliding horizontally
+        if (diffX > 0) {
+            // swiped left
+            if (snakeAlive == false) {
+              snakeAlive = true;
+              ResetInterval();
+            }
+            snakeDirection = 4;
+        } else {
+            // swiped right
+            if (snakeAlive == false) {
+              snakeAlive = true;
+              ResetInterval();
+            }
+            snakeDirection = 2;
+        }
+    } else {
+        // sliding vertically
+        if (diffY > 0) {
+            // swiped up
+            if (snakeAlive == false) {
+              snakeAlive = true;
+              ResetInterval();
+            }
+            snakeDirection = 1;
+        } else {
+            // swiped down
+            if (snakeAlive == false) {
+              snakeAlive = true;
+              ResetInterval();
+            }
+            snakeDirection = 3;
+        }
+    }
+
+    initialX = null;
+    initialY = null;
+};
+
+document.addEventListener("touchstart", startTouch, false);
+document.addEventListener("touchmove", moveTouch, false);
 
 NewBody();
 GenNewApple();
