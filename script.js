@@ -30,6 +30,7 @@ function startTouch(e) {
 };
 
 function moveTouch(e) {
+    e.preventDefault();
     if (initialX === null || initialY === null ) {
         return;
     }
