@@ -74,3 +74,21 @@ a:visited{
     font-size:normal;
     color: rgb(89, 120, 163)
 }
+@media only screen and (max-width: 300px) {
+    body {
+        zoom: 0.75;
+        -moz-transform: scale(0.25); /* Firefox */
+    }
+}
+@media only screen and (min-width: 301px) and (max-width: 400px) {
+    body {
+        zoom: 1;
+        -moz-transform: scale(1); /* Firefox */
+    }
+}
+@media only screen and (min-width: 401px) {
+    body {
+        zoom: 1.25;
+        -moz-transform: scale(1.25); /* Firefox */
+    }
+}
