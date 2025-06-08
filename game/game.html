@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS Link -->
+    <link rel="stylesheet" href="./style.css">
+    <!-- JS Link -->
+    <script src="./script.js" defer></script>
+    <!-- Google Font Link -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
+    <!-- Other -->
+     <link rel="icon" type="image/png" href="../FaviconSnake.png">
+    <title>Simple Snake</title>
+</head>
+<body>
+    <header>
+        <button class="btn" onclick="backToHome()"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -1150 960 960" width="24px" fill="#e3e3e3"><path d="M280-200v-80h284q63 0 109.5-40T720-420q0-60-46.5-100T564-560H312l104 104-56 56-200-200 200-200 56 56-104 104h252q97 0 166.5 63T800-420q0 94-69.5 157T564-200H280Z"/></svg>Back</button>
+        <h3>Simple Snake</h3>
+        <p style="padding: 5px; margin-top: 8px;">v2.1</p>
+    </header>
+    <section id="game">
+        <div id="game_screen">
+            <div id="game_area">
+                
+            </div>
+        </div>
+        <div id="game_info">
+            <h1>Score</h1>
+            <h3>Actual Score : <p style="display: inline;" id="act">0 apple</p></h3>
+            <h3>Hight Score : <p style="display: inline;" id="hig">0 apple</p></h3>
+            <br>
+            <p>Created by Jimmy</p>
+        </div>
+    </section>
+    <div id="tuto"><h4>Use the key arrow<br>or swipe to control the snake</h4></div>
+</body>
+</html>

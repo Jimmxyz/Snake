@@ -1,23 +1,17 @@
 <p>
-  <h1>Snake</h1>
-  <a href="LICENSE"><img alt="Static Badge" src="https://img.shields.io/badge/License_:-GNU%20General%20Public%20License%20v3.0-orange"></a>
+  <h1>Simple Snake</h1>
+  <a href="LICENSE"><img alt="Static Badge" src="https://img.shields.io/badge/License_:-MIT-orange"></a>
   <a href="https://jimmxyz.github.io/Snake/"><img alt="Static Badge" src="https://img.shields.io/badge/Play_it_with_:-Github_Pages-green"></a>
   <a href="https://github.com/Jimmxyz/Snake/releases/tag/Release"><img alt="Static Badge" src="https://img.shields.io/badge/Download_on_:-Last%20release-blue"></a>
 </p>
 
 This is a simple version in Javascript of the original Snake game
 
-This version was free and open-source
+This version is free and open-source
 
-# Compatibility
-This version of Snake are sopposed to be lauched in any browser on  desktop.
->[!WARNING]
->Only chromium based and geko based browser was verified, can be not work on other browser
+# Credit
 
-# Security
-
->[!CAUTION]
->Will not be have any security update
+Created by me (@Jimmxyz on Github)
 
 # License
-This version of Snake is under the GNU General Public License v3.0
+This version of Snake is under the MIT License
