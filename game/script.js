@@ -42,12 +42,10 @@ function init(){
         }   
     }
     console.log("Game grid displayed");
-    try{
-      document.getElementById('hig').innerText = String(localStorage.getItem("HIGH_SCORE")) + " apple"
+    if(localStorage.getItem("HIGH_SCORE") === null){
+      localStorage.setItem("HIGH_SCORE",0)
     }
-    catch{
-      document.getElementById('hig').innerText = "No high score yet"
-    }
+    document.getElementById('hig').innerText = String(localStorage.getItem("HIGH_SCORE")) + " apple"
     for (let i = longPositionHistory; i > 0; i--) {
         document.getElementById('COL' + positionHistoryY[i] + "CELL" + positionHistoryX[i]).style.backgroundColor = "rgb(157, 157, 225)";
       }
@@ -217,16 +215,11 @@ function GenNewApple() {
 
   function die(){
     snakeAlive = false;
-    alert("------------------------------ You are die ------------------------------\nNumber of apple collected : " + appleColected + "\n--------------------------------------------------------------------------");
-    try{
-      if(localStorage.getItem("HIGH_SCORE") < appleColected){
-        localStorage.setItem("HIGH_SCORE") = appleColected;
-      }
+    if(localStorage.getItem("HIGH_SCORE") < appleColected){
+      localStorage.setItem("HIGH_SCORE") = appleColected;
     }
-    catch{
-      localStorage.setItem("HIGH_SCORE",appleColected);
-    }
-    window.location.replace("../index.html");
+    localStorage.setItem("SCORE",appleColected)
+    window.location.replace("./gameOver.html");
   }
 
 

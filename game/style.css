@@ -201,3 +201,14 @@ header:hover{
     left: 50%;
     transform: translate(-50%, -50%);
 }
+#scoreShow{
+    text-align: center;
+    background-color: rgb(75, 75, 75);
+    border-radius: 5px;
+}
+#highScoreShow{
+    text-align: center;
+    background-color: rgb(75, 75, 75);
+    border-radius: 5px;
+    padding: 2px;
+}
