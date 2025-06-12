@@ -46,6 +46,7 @@ function init(){
       localStorage.setItem("HIGH_SCORE",0)
     }
     document.getElementById('hig').innerText = String(localStorage.getItem("HIGH_SCORE")) + " apple"
+    document.getElementById('hig_mob').innerText = String(localStorage.getItem("HIGH_SCORE")) + " apple"
     for (let i = longPositionHistory; i > 0; i--) {
         document.getElementById('COL' + positionHistoryY[i] + "CELL" + positionHistoryX[i]).style.backgroundColor = "rgb(157, 157, 225)";
       }
@@ -216,7 +217,7 @@ function GenNewApple() {
   function die(){
     snakeAlive = false;
     if(localStorage.getItem("HIGH_SCORE") < appleColected){
-      localStorage.setItem("HIGH_SCORE") = appleColected;
+      localStorage.setItem("HIGH_SCORE", appleColected)
     }
     localStorage.setItem("SCORE",appleColected)
     window.location.replace("./gameOver.html");
@@ -265,8 +266,8 @@ function forward(){
       } else if (snakeDirection == 4) {
         positionHistoryY[0]--;
       }
-      
-      
+
+
       //Check Snake is not outside
       if (positionHistoryX[0] > 19 || positionHistoryY[0] > 19 || positionHistoryX[0] < 0 || positionHistoryY[0] < 0) {
         die();
@@ -277,6 +278,7 @@ function forward(){
       if (positionHistoryX[0] == appleX && positionHistoryY[0] == appleY) {
         appleColected++;
         document.getElementById('act').innerText = appleColected + " apple"
+        document.getElementById('act_mob').innerText = appleColected + " apple"
         longPositionHistory++;
         document.getElementById('COL' + appleY + "CELL" + appleX).style.backgroundColor = ""
         GenNewApple();
@@ -321,3 +323,81 @@ function forward(){
     }
     
     }
+
+//Controller support
+window.addEventListener("gamepadconnected", function(e) {
+  var gp = navigator.getGamepads()[e.gamepad.index];
+  console.log("Contrôleur connecté, index : %d, id: %s", gp.index, gp.id);
+});
+window.addEventListener("gamepaddisconnected", function(e) {
+  console.log("Contrôleur déconnecté du port %d", e.gamepad.index);
+});
+setInterval(function() {
+  var gamepads = navigator.getGamepads();
+  for (var i = 0; i < gamepads.length; i++) {
+    var gp = gamepads[i];
+      if (gp) {
+        var axeX = gp.axes[0];
+        var axeY = gp.axes[1];
+        if (axeX.toFixed(1) == -1) { validInput = false;
+      if (snakeAlive == false) {
+        snakeAlive = true;
+        ResetInterval();
+      }
+      snakeDirection = 4;}
+        else if (axeX.toFixed(1) == 1) { validInput = false;
+      if (snakeAlive == false) {
+        snakeAlive = true;
+        ResetInterval();
+      }
+      snakeDirection = 2; }
+        if (axeY.toFixed(1) == -1) { if (snakeAlive == false) {
+        snakeAlive = true;
+        ResetInterval();
+      }
+      snakeDirection = 1; }
+        else if (axeY.toFixed(1) == 1) { 
+          if (snakeAlive == false) {
+                  snakeAlive = true;
+                  ResetInterval();
+                }
+                snakeDirection = 3;
+        }
+        gp.buttons.forEach(() =>function(button, index) {
+          if (button.pressed) {
+            console.log("Bouton pressé sur le contrôleur %d: bouton %d", gp.index, index);
+            if(index === 14){
+               validInput = false;
+      if (snakeAlive == false) {
+        snakeAlive = true;
+        ResetInterval();
+      }
+      snakeDirection = 4;
+            }
+            else if(index === 13){
+              //Down  
+              if (snakeAlive == false) {
+                  snakeAlive = true;
+                  ResetInterval();
+                }
+                snakeDirection = 3;
+            }
+            else if(index === 12){
+                if (snakeAlive == false) {
+        snakeAlive = true;
+        ResetInterval();
+      }
+      snakeDirection = 1;
+            }
+            else if(index === 15){
+                      snakeDirection = 2; }
+
+            }
+            else if(index === 0){
+                //confirm
+            }
+          }
+        );
+      }
+    }
+  }, 100);
