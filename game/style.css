@@ -259,7 +259,18 @@ header:hover{
         display: block;
     }
     #game{
-        max-height: 65%;
+        max-height: 50%;
+    }
+}
+@media (max-width: 450px) {
+    #game_info{
+        display: none;
+    }
+    #game_info_mobile{
+        display: block;
+    }
+    #game{
+        max-height: 35%;
     }
 }
 #main{ 
