@@ -25,6 +25,34 @@
                 alert("Your data was succesfuly erased.")
             }
         }
+        document.addEventListener(
+  "keydown",
+  (event) => {
+    const keyName = event.key;
+    if ((keyName === "Enter")) {
+      window.location.replace("./game/game.html");
+    }},
+  false
+);
+
+window.addEventListener("gamepadconnected", function(e) {
+    var gp = navigator.getGamepads()[e.gamepad.index];
+   });
+  setInterval(function() {
+    var gamepads = navigator.getGamepads();
+    for (var i = 0; i < gamepads.length; i++) {
+      var gp = gamepads[i];
+      if (gp) {
+        gp.buttons.forEach(function(button, index) {
+          if (button.pressed) {
+            if(index === 0){
+                window.location.replace("./game/game.html");
+            }
+          }
+        });
+      }
+    }
+  }, 100);
     </script>
     <div id="menu">
         <img src="FaviconSnake.png" style="image-rendering: pixelated; border-radius: 5px;" width="75" height="75">

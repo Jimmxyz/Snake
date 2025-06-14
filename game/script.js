@@ -13,6 +13,7 @@ let appleY = 12;
 let time = 300;
 let forwardInterval;
 let appleColected = 0;
+let lastMove = 4;
 
 //Touch function
 let initialX = null;
@@ -54,7 +55,6 @@ function init(){
 }
 
 
-
 function startTouch(e) {
     initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
@@ -74,14 +74,14 @@ function moveTouch(e) {
 
     if (Math.abs(diffX) > Math.abs(diffY)) {
         // sliding horizontally
-        if (diffX > 0) {
+        if (diffX > 0 && lastMove !== 4) {
             // swiped left
             if (snakeAlive == false) {
               snakeAlive = true;
               ResetInterval();
             }
             snakeDirection = 4;
-        } else {
+        } else if (lastMove !== 2) {
             // swiped right
             if (snakeAlive == false) {
               snakeAlive = true;
@@ -91,14 +91,14 @@ function moveTouch(e) {
         }
     } else {
         // sliding vertically
-        if (diffY > 0) {
+        if (diffY > 0 && lastMove !== 1) {
             // swiped up
             if (snakeAlive == false) {
               snakeAlive = true;
               ResetInterval();
             }
             snakeDirection = 1;
-        } else {
+        } else if(lastMove !== 3){
             // swiped down
             if (snakeAlive == false) {
               snakeAlive = true;
@@ -126,8 +126,8 @@ document.addEventListener(
   "keydown",
   (event) => {
     const keyName = event.key;
-    //input "ArrowRight"
-    if ((keyName === "ArrowRight" || keyName === "d" || keyName === "D")  && validInput === true) {
+    //input "ArrowRight" 
+    if ((keyName === "ArrowRight" || keyName === "d" || keyName === "D")  && validInput === true && lastMove !== 2) {
       validInput = false;
       if (snakeAlive == false) {
         snakeAlive = true;
@@ -137,7 +137,7 @@ document.addEventListener(
       return;
     }
     //input "ArrowLeft"
-    if ((keyName === "ArrowLeft" || keyName === "a" || keyName === "A") && validInput === true) {
+    if ((keyName === "ArrowLeft" || keyName === "a" || keyName === "A") && validInput === true && lastMove !== 4) {
       validInput = false;
       if (snakeAlive == false) {
         snakeAlive = true;
@@ -147,7 +147,7 @@ document.addEventListener(
       return;
     }
     //input "ArrowUp"
-    if ((keyName === "ArrowUp" || keyName === "w" || keyName === "W") && validInput === true) {
+    if ((keyName === "ArrowUp" || keyName === "w" || keyName === "W") && validInput === true && lastMove !== 1) {
       validInput = false;
       if (snakeAlive == false) {
         snakeAlive = true;
@@ -157,7 +157,7 @@ document.addEventListener(
       return;
     }
     //input "ArrowDown"
-    if ((keyName === "ArrowDown" || keyName === "d" || keyName === "D") && validInput === true) {
+    if ((keyName === "ArrowDown" || keyName === "d" || keyName === "D") && validInput === true && lastMove !== 3) {
       validInput = false;
       // console.log(validInput);
       if (snakeAlive == false) {
@@ -259,12 +259,16 @@ function forward(){
       //Move
       if (snakeDirection == 1) {
         positionHistoryX[0]--;
+        lastMove = 3
       } else if (snakeDirection == 3) {
         positionHistoryX[0]++;
+        lastMove = 1
       } else if (snakeDirection == 2) {
         positionHistoryY[0]++;
+        lastMove = 4
       } else if (snakeDirection == 4) {
         positionHistoryY[0]--;
+        lastMove = 2
       }
 
 

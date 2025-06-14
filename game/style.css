@@ -12,6 +12,17 @@ h1{
       "wdth" 100,
       "YTLC" 500;
 }
+h2{
+    color: rgb(255, 255, 255);
+    font-family: "Nunito Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+    padding: 20px;
+}
 h3{
     color: rgb(255, 255, 255);
     font-family: "Nunito Sans", serif;
@@ -74,6 +85,14 @@ a:hover{
     text-align: center;
     align-content: center;
 }
+#menuSetUp{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+    text-align: center;
+    align-content: center;
+}
 header{
     padding: 10px;
     border-radius: 5px;
@@ -120,6 +139,33 @@ header:hover{
 .btn:hover {
     transform: scale(1.1);
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+#nameArea{
+    background-color: rgb(255, 255, 255);
+    border: 0px;
+    border-radius: 5px;
+    padding: 5px;
+    padding-right: 10px;
+    color: rgb(0, 0, 0);
+    font-family: "Nunito Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-size: larger;
+    font-variation-settings:
+      "wdth" 100,
+      "YTLC" 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+#nameArea:hover {
+    transform: scale(1.1) !important;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+#nameArea:focus{
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 5px solid rgb(81, 81, 227);
+    outline: none;
 }
 #credit{
     position: fixed;
@@ -277,4 +323,32 @@ header:hover{
     display: flex;
     flex-direction: column;
     height: 90vh;
+}
+#show{
+    display: none;
+}
+#setup{
+    display: none;
+}
+#preview{
+    display: none;
+    scale: 0.6;
+    padding: 30px;
+    border: 2px solid #ffffff ;
+    border-radius: 5px;
+    margin-top: -90px;
+}
+#previewBTN{
+    display: none;
+}
+#share{
+    display: none;
+}
+#link{
+    margin-top: -60px;
+    display: none;
+}
+#shareIT{
+    display: none;
+    background-color: rgb(75,75,75);
 }
