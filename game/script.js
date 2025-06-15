@@ -5,7 +5,7 @@
 let validInput = true;
 let snakeAlive = false;
 let snakeDirection = 2;
-let longPositionHistory = 2;
+let longPositionHistory = 1;
 let positionHistoryY = [10,9,8];
 let positionHistoryX = [9,9,9];
 let appleX = 12;
@@ -48,10 +48,10 @@ function init(){
     }
     document.getElementById('hig').innerText = String(localStorage.getItem("HIGH_SCORE")) + " apple"
     document.getElementById('hig_mob').innerText = String(localStorage.getItem("HIGH_SCORE")) + " apple"
-    for (let i = longPositionHistory; i > 0; i--) {
+    for (let i = longPositionHistory + 1; i > 0; i--) {
         document.getElementById('COL' + positionHistoryY[i] + "CELL" + positionHistoryX[i]).style.backgroundColor = "rgb(157, 157, 225)";
-      }
-      document.getElementById('COL' + positionHistoryY[0] + "CELL" + positionHistoryX[0]).style.backgroundColor = "rgb(115, 115, 185)";
+    }
+    document.getElementById('COL' + positionHistoryY[0] + "CELL" + positionHistoryX[0]).style.backgroundColor = "rgb(115, 115, 185)";
 }
 
 
@@ -201,13 +201,11 @@ document.addEventListener(
 
 //Create apple coordinate
 function GenNewApple() {
-  for (let i = 0; i < positionHistoryX.length; i++) {
-    appleX = Math.floor(20 * Math.random());
-    appleY = Math.floor(20 * Math.random());
-    while (appleX == positionHistoryX[i] && appleY == positionHistoryY[i]) {
-        appleX = Math.floor(20 * Math.random());
-        appleY = Math.floor(20 * Math.random());
-    }
+  appleX = Math.floor(20 * Math.random());
+  appleY = Math.floor(20 * Math.random());
+  while (document.getElementById("COL" + appleY + "CELL" + appleX).style.backgroundColor === "rgb(115, 115, 185)" || document.getElementById("COL" + appleY + "CELL" + appleX).style.backgroundColor === "rgb(115, 115, 185)") {
+      appleX = Math.floor(20 * Math.random());
+      appleY = Math.floor(20 * Math.random());
   }
   document.getElementById("COL" + appleY + "CELL" + appleX).style.backgroundColor = "rgb(241, 109, 109)"
 }
@@ -277,7 +275,6 @@ function forward(){
         die();
         return
       }
-      
       //Check apple coordinate
       if (positionHistoryX[0] == appleX && positionHistoryY[0] == appleY) {
         appleColected++;
@@ -285,6 +282,11 @@ function forward(){
         document.getElementById('act_mob').innerText = appleColected + " apple"
         longPositionHistory++;
         document.getElementById('COL' + appleY + "CELL" + appleX).style.backgroundColor = ""
+        //Snake renderer part 2 (refresh and add)
+        for (let i = longPositionHistory; i > 0; i--) {
+          document.getElementById('COL' + positionHistoryY[i] + "CELL" + positionHistoryX[i]).style.backgroundColor = "rgb(157, 157, 225)";
+        }
+        document.getElementById('COL' + positionHistoryY[0] + "CELL" + positionHistoryX[0]).style.backgroundColor = "rgb(115, 115, 185)";
         GenNewApple();
         if(time > 150){
           time /= 1.1
@@ -304,11 +306,13 @@ function forward(){
         }
         ResetInterval();
       }
+      else{
       //Snake renderer part 2 (refresh and add)
-      for (let i = longPositionHistory; i > 0; i--) {
+      for (let i = longPositionHistory + 1; i > 0; i--) {
         document.getElementById('COL' + positionHistoryY[i] + "CELL" + positionHistoryX[i]).style.backgroundColor = "rgb(157, 157, 225)";
       }
-      document.getElementById('COL' + positionHistoryY[0] + "CELL" + positionHistoryX[0]).style.backgroundColor = "rgb(115, 115, 185)";
+        document.getElementById('COL' + positionHistoryY[0] + "CELL" + positionHistoryX[0]).style.backgroundColor = "rgb(115, 115, 185)";
+      }
     }
   }
 
