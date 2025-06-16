@@ -23,7 +23,9 @@ This version is free and open-source
 | Steam Deck | ⬜ |
 
 🟩 Supported
+
 ⬜ Unknow support
+
 🟥 Unsupported
 
 
