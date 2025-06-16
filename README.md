@@ -13,18 +13,18 @@ This version is free and open-source
 
 | Controller | Status |
 | --- | :---: |
-| Xbox 360 | ⬜ |
+| Xbox 360 | 🟨 |
 | Xbox one | 🟩 |
 | Xbox séries | 🟩 | 
-| Switch JoyCon | ⬜ |
-| PS3 | ⬜ |
-| PS4 | ⬜ |
-| PS5 | ⬜ |
-| Steam Deck | ⬜ |
+| Switch JoyCon | 🟨 |
+| PS3 | 🟨 |
+| PS4 | 🟨 |
+| PS5 | 🟨 |
+| Steam Deck | 🟨 |
 
 🟩 Supported
 
-⬜ Unknow support
+🟨 Unknow support
 
 🟥 Unsupported
 
