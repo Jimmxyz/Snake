@@ -9,6 +9,24 @@ This is a simple version in Javascript of the original Snake game
 
 This version is free and open-source
 
+# Compatibility
+
+| Controller | Status |
+| --- | :---: |
+| Xbox 360 | ⬜ |
+| Xbox one | 🟩 |
+| Xbox séries | 🟩 | 
+| Switch JoyCon | ⬜ |
+| PS3 | ⬜ |
+| PS4 | ⬜ |
+| PS5 | ⬜ |
+| Steam Deck | ⬜ |
+
+🟩 Supported
+⬜ Unknow support
+🟥 Unsupported
+
+
 # Credit
 
 Created by me (@Jimmxyz on Github)
